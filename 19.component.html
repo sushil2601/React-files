@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+        const rootHandle = document.getElementById('root')
+
+        //Data type of props is object.
+
+        function Greet(props){
+            //props.name = 'Mat' //Don't do like this
+            console.log(props)
+            //return <h1> Hello ,{props.name} from {props.company}</h1>
+            return `Hello ${props.name}`
+        }
+
+        //const ele = Greet({name : 'Steve',company : 'Infosys'})
+
+        const ele = <Greet name = 'Sushil' company = 'Infosys' />
+
+        ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html>

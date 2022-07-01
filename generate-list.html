@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+            const fruits = ['Apple','Banana','Kiwi','mango']
+
+            // const generateList = (fruits) => {
+            //     //const result = []
+            //     // for(let i = 0;i<fruits.length;i++){
+            //     //     result.push(<li>{fruits[i]}</li>)
+            //     // }
+            //     // console.log(result)
+            //     // fruits.forEach((ele) => {
+            //     //     result.push(<li>{ele}</li>)
+            //     // })
+            //     // return result
+
+            //     const result = fruits.map((ele) => {
+            //         return <li> {ele} </li>
+            //     })
+            //     return result
+            // }
+            
+            console.log(fruits)
+            const ele = (
+                <ul>
+                   {generateList(fruits)}
+                </ul>
+            )
+            
+            ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html>

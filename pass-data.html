@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+            
+            function Parent(props){
+
+                const name1 = "Sushil"
+                const name2 = "Suman"
+                return(
+                    <div>
+                        <h1> Parent Component</h1>
+                        <Child name = {name1} />
+                        <Child name = {name2} />
+                        <Child name = "Muskan"/>
+                        
+                    </div>
+                )
+            }
+            //<Child /> . If not pass the props then child return props is an empty object.
+            function Child(props){
+
+                console.log(props)
+
+                return(
+                    <div>
+                        <h2> Child Component - {props.name} </h2>
+                        
+                    </div>
+                )
+            }
+
+            ReactDOM.render(<Parent />,rootHandle)
+        </script>
+    </body>
+</html>

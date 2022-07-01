@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="../react.development.js"></script>
+        <script src ="../react-dom.development.js"></script>
+        <script src="../babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+
+            // function Counter(props){
+
+               
+            //     return(
+            //         <div>
+            //             <h1> 0 </h1>
+            //             <button onClick={() =>{
+            //                 console.log('btn clicked')
+            //             }}> + 1</button>
+            //         </div>
+            //     )
+            // }
+            const {useState} = React
+            
+            function Counter(props){
+
+                //declare state variable
+
+                const[count,setCount] = useState(0)
+                
+                //callback
+
+                const increment = () =>{
+                    setCount(count + 1)
+                }
+
+                const reset = () =>{
+                    const result = confirm('Are you sure?')
+                    if(result){
+                        setCount(0)
+                    }
+                }
+
+
+                return(
+                    <div>
+                        <h1> {count} </h1>
+                        <button onClick ={increment}> + 1 </button>
+
+                        <button onClick ={reset}>reset</button>
+
+                    </div>
+                )
+            }
+
+            ReactDOM.render(<Counter />,rootHandle)
+
+        </script>
+    </body>
+</html>

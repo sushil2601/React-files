@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+        const rootHandle = document.getElementById('root')
+
+        const users = [
+            {'id':1,'email':'rashmika_mandhana@gmail.com',
+            'first_name' : 'Rashmika',
+            'avatar' :'https://static.toiimg.com/thumb/msid-82158760,width-800,height-600,resizemode-75,imgsize-683757,pt-32,y_pad-40/82158760.jpg' },
+            {'id':2,'email':'rashmika1_mandhana@gmail.com',
+            'first_name' : 'Mandhana',
+            'avatar' : 'https://static-ai.asianetnews.com/images/01eqfbz0ep7reng9y8sdyhs6sy/r3-jpg.jpg'}
+        ]
+
+        function UserInfo(props){
+            console.log(props)
+            return(
+                <div>
+                    <img src = {props.avatar}/>
+                    <h3>{props.first_name}</h3>
+                    <hr />
+                </div>
+            )
+        }
+
+        const ele = (
+            <div>
+                {users.map((user) => {
+                    return <UserInfo 
+                    key = {user.id} 
+                    first_name = {user.first_name} 
+                    avatar = {user.avatar}/>
+
+                })}
+               
+            </div>
+        )
+
+        
+
+       
+        ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html>

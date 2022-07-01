@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>
+            Assingment_1
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="../react.development.js"></script>
+        <script src ="../react-dom.development.js"></script>
+        <script src="../babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+
+            const users =  [
+            { "id": 1, "email": "george@gmail.com", "first_name": "George", "avatar": "https://randomuser.me/api/portraits/men/32.jpg" },
+            { "id": 2, "email": "weaver@gmail.com", "first_name": "Weaver", "avatar": "https://randomuser.me/api/portraits/men/46.jpg" },
+            { "id": 3, "email": "wong@gmail.com", "first_name": "Wong", "avatar": "https://randomuser.me/api/portraits/men/36.jpg" },
+            { "id": 4, "email": "eve@gmail.com", "first_name": "Eve", "avatar": "https://randomuser.me/api/portraits/women/79.jpg" }
+           ] 
+
+            const ele = (
+
+                    <div>
+                        <h2>Total user - {users.length}</h2> 
+                        
+                        <table border='1'>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>email</th>
+                                    <th>first_name</th>
+                                    <th>avatar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {users.map((ele)=>{
+                                    return(
+                                        <tr key={ele.id}>
+                                            <td>{ele.id}</td>
+                                            <td><img src={ele.avatar}/></td>
+                                            <td>{ele.first_name}</td>
+                                            <td>{ele.email}</td>
+                                            
+                                            
+                                            
+                                        </tr>
+
+                                    )
+                                })}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+            )
+
+        
+            ReactDOM.render(ele,rootHandle)
+        </script>
+    </body>
+</html>
