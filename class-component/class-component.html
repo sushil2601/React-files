@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+
+        <div id = "root">
+
+        </div>
+        <script src="../react.development.js"></script>
+        <script src ="../react-dom.development.js"></script>
+        <script src="../babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+
+            //child class -- Greet && base class -- Component
+
+            class Greet extends React.Component{
+                // Constructor -- data
+                render(){ //UI -- Presentation
+                    return(
+                        <div>
+                            {/* this is a comment inside jsx */}
+                            <h1>Hi there,{this.props.name}</h1>    
+                        </div>
+                    )
+                }
+
+            }
+
+            ReactDOM.render(<Greet name="sushil"/>,rootHandle)
+
+        </script>
+
+
+    </body>
+</html>
