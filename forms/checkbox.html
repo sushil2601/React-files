@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>check box</title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="../react.development.js"></script>
+        <script src ="../react-dom.development.js"></script>
+        <script src="../babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+
+            /*
+                1. Create a componenet called as TableReservation
+                2. The component returns a form, the form contains input fields like 
+                    * username
+                    * veg option
+                3. The user can submit the form
+                4. In an alert box show if the user selected veg option or not
+            */
+
+            const { useState } = React
+
+            function TableReservation(props){
+                const [username, setUsername] = useState('')
+                const [vegOption, setVegOption] = useState(false)
+
+                const handleUsernameChange = (e) => {
+                    const userInput = e.target.value
+                    setUsername(userInput)
+                }
+
+                const handleVegOptionChange = (e) => {
+                    // console.log(e.target.checked)
+                    const vegOptionInput = e.target.checked
+                    setVegOption(vegOptionInput)
+                }
+
+                const handleSubmit = (e) => {
+                    e.preventDefault()
+                    alert(`${username} - Veg Preference - ${vegOption ? 'yes' : 'no'}`)
+                }
+
+                return (
+                    <form onSubmit={handleSubmit}>
+                        <label> username </label><br/>
+                        <input type="text" value={username} onChange={handleUsernameChange} /><br />
+
+                        <label> Veg Only </label><br />
+                        <input type="checkbox" checked={vegOption} onChange={handleVegOptionChange}/>
+
+                        <input type="submit" value="reserve"/> 
+
+                    </form>
+                )
+            }
+
+            ReactDOM.render(<TableReservation />,rootHandle)
+
+
+
+        </script>
+    </body>
+</html>

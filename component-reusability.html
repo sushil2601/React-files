@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+        const rootHandle = document.getElementById('root')
+
+        const user = {
+            first_name : 'Rashmika madhana',
+            email : 'rashmika_mandhana@gmail.com',
+            avatar : 'https://i.pinimg.com/736x/9f/30/27/9f30276558c8ea2288358c1cf7b2762f.jpg'
+        }
+
+        const user2 = {
+            first_name : 'smriti mandhana',
+            email : 'smriti_mandhana@gmail.com',
+            avatar : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZWyKAggKgQSu9uONlPvhR-d9cypOvbkPOyA&usqp=CAU'
+        }
+
+        function UserInfo(props){
+            console.log(props)
+            return(
+                <div>
+                    <img src = {props.avatar}/>
+                    <h3>{props.first_name}</h3>
+                    <hr />
+                </div>
+            )
+        }
+
+        const ele = (
+            <div>
+                <UserInfo first_name = {user.first_name} avatar = {user.avatar}/>
+                <UserInfo first_name = {user2.first_name} avatar = {user2.avatar}/>
+
+            </div>
+        )
+
+        
+
+        // const ele = (
+        //     <div>
+        //         <img src = {user.avatar}/>
+        //         <h3>{user.first_name}</h3>
+
+        //         <img src = {user2.avatar}/>
+        //         <h3>{user2.first_name}</h3>
+                
+        //     </div>
+        // )
+        //const ele = <UserInfo first_name = {user.first_name} avatar = {user.avatar}/>
+        ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html>

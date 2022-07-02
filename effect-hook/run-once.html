@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title></title>
+
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="../react.development.js"></script>
+        <script src ="../react-dom.development.js"></script>
+        <script src="../babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+
+            const { useState, useEffect} = React
+
+            function BookTickets(props){
+                const [count,setCount] = useState(1)
+
+                useEffect(()=>{
+                    alert('Component render')
+                },[])
+
+                const increemnt = () =>{
+                    setCount(count+1)
+                }
+
+                return(
+                    <div>
+                        <h2> You have booked {count} tickets </h2>
+                        <button onClick={increemnt}> +1 </button>
+                    </div>
+                )
+            }
+
+            ReactDOM.render(<BookTickets />,rootHandle)
+
+        </script>
+    </body>
+</html>

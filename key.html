@@ -1,0 +1,67 @@
+<!-- <html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+            const fruits = ['Apple','Banana','Kiwi']
+            
+            const ele = (
+                <ul>
+                    {fruits.map((ele) =>{
+                        return <li key = {ele}>{ele}</li>
+                    })}
+                    
+                </ul>
+            )
+            
+            ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html> -->
+
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+            const fruits = ['Apple','Banana','Kiwi','Banana','Apple']
+            
+            const ele = (
+                <ul>
+                    {fruits.map((ele,i) =>{
+                        return <li key = {i}>{ele}</li>
+                    })}
+                    
+                </ul>
+            )
+            
+            ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html>

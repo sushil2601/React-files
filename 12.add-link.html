@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+            
+            const links = [
+                {id : 1,name : 'facebook',url : 'http://www.facebook.com'},
+                {id : 2,name : 'instagram',url : 'http://www.instagram.com'},
+                {id : 3,name : 'twitter',url : 'http://www.twitter.com'}
+            ]
+
+            const ele = (
+                <div>
+                    <h2> Total link - {links.length}</h2>
+                    <table border = "1">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> Name </th>
+                                <th> url </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {links.map((ele) => {
+                                return (
+                                    <tr key = {ele.id}>
+                                        <td>{ele.id}</td>
+                                        <td><a href = {ele.url} target = "_blank">{ele.name}</a></td>
+                                        <td><a href = {ele.url} target = "_blank">{ele.url}</a></td>
+                                    
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                
+                </div>
+            )
+
+            
+            
+            ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html>

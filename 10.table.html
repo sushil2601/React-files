@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "root">
+
+        </div>
+        <script src="react.development.js"></script>
+        <script src ="react-dom.development.js"></script>
+        <script src="babel.js"></script>
+
+        <script type="text/babel">
+
+            const rootHandle = document.getElementById('root')
+            const user = {
+                first_name :'Rashmika mandhana',
+                email : 'rashmika_mandhana@gmail.com',
+                avatar : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ZAXw4gkpJTgGX4_a-vWlZEYwxIGpAC2Paw&usqp=CAU'
+            }
+
+            const ele = (
+                <table>
+                    <thead>
+                        <tr>
+                            <th> pic</th>
+                            <th> name</th>
+                            <th> email</th>
+
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr>
+                            <td> <img src ={user.avatar}/></td>
+                            <td> {user.first_name}</td>
+                            <td> {user.email}</td>
+                            
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            )
+            ReactDOM.render(ele,rootHandle)
+
+        </script>
+    </body>
+</html>
